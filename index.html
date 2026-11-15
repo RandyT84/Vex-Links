@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10110b">
+<title>VEX | Links</title>
+<style>
+  :root { color-scheme: dark; --yellow: #faff15; --ink: #10110b; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 28px 20px; background: var(--ink); color: #fcfcef; font-family: "Instrument Sans", system-ui, sans-serif; }
+  .flow { position: fixed; inset: 0; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse at 55% 0%, #323710, transparent 68%); }
+  .flow::before, .flow::after { content: ""; position: absolute; width: max(90vw, 650px); height: 135px; left: 50%; top: 36%; border-radius: 50%; border-top: 2px solid #dfff56; box-shadow: 0 -9px 28px #dcff1744, inset 0 12px 28px #dcff1724; transform: translateX(-50%) rotate(-19deg); animation: flow 11s ease-in-out infinite alternate; }
+  .flow::after { top: 65%; opacity: .5; animation-delay: -5s; }
+  @keyframes flow { to { transform: translate(-53%, 32px) rotate(-28deg) scaleX(1.14); } }
+  main { isolation: isolate; width: min(100%, 440px); text-align: center; padding: clamp(22px, 6vw, 42px); background: #14150cf2; border: 1px solid #f0ff373d; border-radius: 28px; box-shadow: 0 24px 90px #0008; }
+  h1 { margin: 0 0 30px; font-size: clamp(4rem, 16vw, 6.5rem); font-weight: 950; line-height: 1; color: var(--yellow); }
+  .logo { display: block; margin: auto; width: min(100%, 288px); height: auto; border-radius: 50%; filter: drop-shadow(0 0 20px #faff1530); }
+  nav { display: grid; gap: 12px; }
+  .link { display: grid; gap: 5px; padding: 16px 20px; min-height: 62px; align-content: center; color: inherit; background: #202116; border: 1px solid #e7f13d30; border-radius: 14px; text-decoration: none; font-size: 1.05rem; font-weight: 750; transition: transform .2s, border-color .2s; }
+  .link[href]:hover { transform: translateY(-3px); border-color: var(--yellow); }
+  .link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+  .primary { background: var(--yellow); color: #171a04; box-shadow: 0 4px 28px #dffe2733; }
+  small { color: #e2ec93; font-size: .8rem; font-weight: 500; }
+  .intro { position: fixed; inset: 0; z-index: 2; pointer-events: none; display: grid; place-items: center; background: var(--ink); animation: exit .25s .48s both; }
+  .intro::before { content: ""; width: 72px; height: 8px; border-radius: 100%; background: var(--yellow); box-shadow: 0 0 24px var(--yellow); animation: sweep .55s both; }
+  @keyframes sweep { from { transform: rotate(-22deg) scaleX(.14); opacity: .35; } to { transform: rotate(-22deg) scaleX(1.85); } }
+  @keyframes exit { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+  @media (prefers-reduced-motion: reduce) {
+    .intro { display: none; }
+    .flow::before, .flow::after, .link { animation: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="flow" aria-hidden="true"></div>
+  <div class="intro" aria-hidden="true"></div>
+  <main>
+    <h1><img class="logo" src="vex-logo.png" width="1254" height="1254" alt="VEX Pep Storage"></h1>
+    <nav aria-label="VEX links">
+      <a class="link primary" href="https://www.instagram.com/vexpepstorage/">DM to order</a>
+      <!-- Add the existing Glow Aminos URL as the href on the next line. -->
+      <a class="link">
+        <span>Glow Aminos</span>
+        <small>Check out with code <strong>RandyT15</strong> for <strong>15% OFF</strong></small>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>
+
